@@ -26,8 +26,8 @@ const Task = ({ id, title, time, describer, ...props }: taskProps) => {
       onClick={() => setSelectTask(id)}
     >
       <div className="w-full">
-        <Text type='p' className=' break-all font-bold text-xl text-slate-900 underline underline-offset-2 w-full decoration-secondary'>{title}</Text>
-        <Text type='p' className=' break-all font-semibold text-xl text-slate-900  w-full decoration-secondary'>{describer}</Text>
+        <Text type='p' className=' break-word font-bold text-xl text-slate-900 underline underline-offset-2 w-full decoration-secondary'>{title}</Text>
+        <Text type='p' className=' break-word font-semibold text-xl text-slate-900  w-full decoration-secondary'>{describer}</Text>
         <div className="flex justify-between w-full">
           <Text type='p' className="mt-2 font-bold text-xl text-slate-900">{time === "00:00" ? 'finished !' : time}</Text>
           {isComplete && <CheckSVG className="h-12 w-12" />}

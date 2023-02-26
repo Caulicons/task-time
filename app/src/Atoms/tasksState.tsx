@@ -8,20 +8,10 @@ const tasksState = atom({
     {
       id: uuidv4(),
       title: 'He is a task',
-      describer: 'On right you can delete and restart',
+      describer: 'On right, you can delete and restart',
       time: '00:03',
       selected: false,
       isRunning: false,
-      complete: false,
-      defaultTime: '00:03'
-    },
-    {
-      id: uuidv4(),
-      title: 'He is a task',
-      describer: 'On right you can delete and restart',
-      time: '00:03',
-      isRunning: false,
-      selected: false,
       complete: false,
       defaultTime: '00:03'
     },

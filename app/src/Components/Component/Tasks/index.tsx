@@ -15,7 +15,7 @@ const Tasks = () => {
 
   return (
     <div className='grid gap-3 h-fit w-[18pc]'>
-      <Text type="p" className='flex justify-center text-2xl'>Estudos do dia</Text>
+      <Text type="p" className='flex justify-center text-2xl'>Tasks of the day</Text>
       <div className='flex flex-col max-h-[500px] overflow-auto scrollbar'>
         {tasks.map((task, i) =>
           <div key={i} className="flex w-full mt-6">

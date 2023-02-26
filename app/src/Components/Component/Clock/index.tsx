@@ -80,7 +80,9 @@ const Clock = () => {
 
   return (
     <>
-      <Text type="p" className='font-semibold mt-8 text-2xl'>To start time choice a lesson</Text>
+      <Text type="p" className='font-semibold mt-8 text-2xl'>{
+        taskToShow?.isRunning ? "task started" : "To start time choice a lesson"
+      }</Text>
       <Box className='bg-secondary  w-11/12'>
         <div className='flex gap-1 p-3 w-full '>
           {taskTime ?
