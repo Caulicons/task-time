@@ -1,17 +1,16 @@
 import { useRecoilState } from "recoil";
 import { selectedTask } from "../Atoms/tasksState";
 import taskInterface from "../interfaces/tasks";
-const [taskToShow, setCompleteTask] = useRecoilState<taskInterface>(selectedTask)
+const [taskToShow, setCompleteTask] =
+  useRecoilState<taskInterface>(selectedTask);
 
 const handleTime = {
   start: () => {
-    const time = taskToShow?.time
-    countdown(time)
+    const time = taskToShow?.time;
+    countdown(time);
   },
-  stop: () => {
-
-  }
-}
+  stop: () => {},
+};
 
 function decreaseTime(timeString: string) {
   // Convert the time string into total seconds
@@ -24,22 +23,22 @@ function decreaseTime(timeString: string) {
   // Convert the total seconds back to the "mm:ss" format
   const newMinutes = Math.floor(newTotalSeconds / 60);
   const newSeconds = newTotalSeconds % 60;
-  const newTimeString = `${newMinutes.toString().padStart(2, "0")}:${newSeconds.toString().padStart(2, "0")}`;
+  const newTimeString = `${newMinutes.toString().padStart(2, "0")}:${newSeconds
+    .toString()
+    .padStart(2, "0")}`;
 
   // Return the new time string
   return newTimeString;
 }
 
 function countdown(timeString: string) {
-
-  if (timeString === "00:00") return
+  if (timeString === "00:00") return;
 
   const intervalId = setInterval(() => {
-
     timeString = decreaseTime(timeString);
-    setCompleteTask({ ...taskToShow, time: timeString })
+    setCompleteTask({ ...taskToShow, time: timeString });
     if (timeString === "00:00") {
-      setCompleteTask({ ...taskToShow, time: timeString })
+      setCompleteTask({ ...taskToShow, time: timeString });
       clearInterval(intervalId);
     }
   }, 1000);
