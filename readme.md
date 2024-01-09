@@ -2,7 +2,7 @@
 
 # 📌 Task Time.
 
-This project is one task timer to lets you organize your day better. 
+This project is one task timer to lets you organize your day better. [See the site](https://task-time.vercel.app/)
 
 ## 💻 Technics and Technologies.
 
